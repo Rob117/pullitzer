@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+npm install
+export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+export ROCKETCHAT_USER=pullitzer
+export ROCKETCHAT_ROOM=''
+export LISTEN_ON_ALL_PUBLIC=true
+export ROCKETCHAT_PASSWORD=pullitzer
+export BOT_NAME=pullitzer
+export ROCKETCHAT_AUTH=password
+exec node_modules/.bin/hubot --name "pullitzer" "$@"
